@@ -1,3 +1,11 @@
+@extends('layouts.app')
+@section('contenu')
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <div class="container">
      <div class="card-body p-md-5">
         <h4 class="text-uppercase fs-0 fs-md-1">Contacter une agence de communication</h4>
@@ -46,3 +54,4 @@
             </form>
     </div>
 </div>
+@endsection

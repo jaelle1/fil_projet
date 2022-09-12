@@ -94,7 +94,7 @@
             <p class="lh-lg mb-0 fw-semi-bold">&copy; Copyright 2021@segtaba.</p>
           </div>
           <div class="col text-sm-end mt-3 mt-sm-0">
-             <a class="fw-semi-bold text-white btn btn-primary" href="{{route('inscrire_agence.index')}}" >INSCRIVEZ-VOUS SUR SEGTABA</a></div>
+             <a class="fw-semi-bold text-white btn btn-primary" href="{{route('contact')}}" >LAISSER NOUS VOTRE MESSAGE OU SUGGESTION</a></div>
         </div>
       </div>
     </footer>

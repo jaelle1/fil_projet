@@ -25,13 +25,13 @@ class InsentrepriseController extends Controller
             'role_id' => 'required',
             'name' => 'required',
             'email' => 'required',
-            'avatar' => 'required',
+            'logo' => 'required',
             'password' => 'required',
             'entite' => 'required',
             'description' => 'required',
         ]);
         $input=$request->all();
-         $input['avatar'] = $request->avatar->store('avatar');
+         $input['logo'] = $request->logo->store("public/logo");
             
         $input['password'] = Hash::make($input['password']);
         
@@ -39,5 +39,10 @@ class InsentrepriseController extends Controller
         User::create($input);
         
         
+    }
+    public function show(Request $request)
+    {
+       $entreprise =  User::find($request->id);
+        return view('voirplus', compact('entreprise'));
     }
 }

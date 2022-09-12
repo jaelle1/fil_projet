@@ -27,7 +27,7 @@ class InscrireagenceController extends Controller
      */
     public function create()
     {
-        $roles_id = Role::where("name", "=", "agence")->get();
+        $roles_id = Role::where("name", "=", "agence")->get()->first()->id;
         return view('inscrire_agence')->with("roles_id", $roles_id);
     }
 
@@ -43,7 +43,7 @@ class InscrireagenceController extends Controller
             'role_id' => 'required',
             'name' => 'required',
             'email' => 'required',
-            'avatar' => 'required',
+            'logo' => 'required|image',
             'password' => 'required',
             'entite' => 'required',
             'description' => 'required',
@@ -52,14 +52,16 @@ class InscrireagenceController extends Controller
         ]);
 
         $input=$request->all();
-         $input['avatar'] = $request->avatar->store('avatar');
+         $input['logo'] = $request->logo->store("public/logo");
             
         $input['password'] = Hash::make($input['password']);
         
 
         User::create($input);
         
-        return view('inscrire_agence')->with('success', 'votre inscription est reussie');
+        $roles_id = Role::where("name", "=", "agence")->get()->first()->id;
+        
+        return view('acceuil', compact("roles_id"))->with('success', 'votre inscription est reussie');
     }
 
     /**
