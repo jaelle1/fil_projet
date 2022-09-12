@@ -46,7 +46,7 @@
       <!-- ============================================-->
       <!-- <section> begin ============================-->
       <section class="text-center py-0">
-        <div class="bg-holder overlay overlay-2" style="background-image:url({{asset('img/header-5.jpg')}});"></div>
+        <div class="bg-holder overlay overlay-2" style="background-image:url({{asset('img/mise.jpg')}})"></div>
         <!--/.bg-holder-->
         <div class="container">
           <div class="row min-vh-100 align-items-center">
@@ -54,17 +54,17 @@
               <!-- <div class="mb-5" data-zanim-xs='{"delay":0,"duration":1}'><a href="../index-2.html"><img src="" alt="logo" /></a></div> -->
               <div class="card" data-zanim-xs='{"delay":0.1,"duration":1}'>
                 <div class="card-body p-md-5">
-                  <h4 class="text-uppercase fs-0 fs-md-1">login with elixir</h4>
+                  <h4 class="text-uppercase fs-0 fs-md-1">Connectez-vous</h4>
                   <form class="text-start mt-4">
                     <div class="row align-items-center">
                       <div class="col-12">
                         <div class="input-group">
-                          <div class="input-group-text bg-100"><span class="far fa-user"></span></div><input class="form-control" type="text" placeholder="Email or username" aria-label="Text input with dropdown button" />
+                          <div class="input-group-text bg-100"><span class="far fa-user"></span></div><input class="form-control" type="email" placeholder="votre adresse email" aria-label="Text input with dropdown button" name='email'/>
                         </div>
                       </div>
                       <div class="col-12 mt-2 mt-sm-4">
                         <div class="input-group">
-                          <div class="input-group-text bg-100"><span class="fas fa-lock"></span></div><input class="form-control" type="Password" placeholder="Password" aria-label="Text input with dropdown button" />
+                          <div class="input-group-text bg-100"><span class="fas fa-lock"></span></div><input class="form-control" type="Password" placeholder="Password" aria-label="Text input with dropdown button" name='password' />
                         </div>
                       </div>
                     </div>

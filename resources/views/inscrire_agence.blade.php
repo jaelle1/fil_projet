@@ -2,7 +2,7 @@
 <html lang="en-US" dir="ltr">
 
   
-<<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,6 +35,7 @@
   </head>
 
   <body>
+
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
@@ -54,7 +55,7 @@
       <!-- ============================================-->
       <!-- <section> begin ============================-->
       <section class="text-center py-0">
-        <div class="bg-holder overlay overlay-1" style="background-image:url({{asset('img/background-1.jpg')}});"></div>
+        <div class="bg-holder overlay overlay-1" style="background-image:url({{asset('img/background-1.jpg')}})"></div>
         <!--/.bg-holder-->
         <div class="container">
           <div class="row min-vh-100 align-items-center">
@@ -63,45 +64,60 @@
               <div class="card" data-zanim-xs='{"delay":0.1,"duration":1}'>
                 <div class="card-body p-md-5">
                   <h4 class="text-uppercase fs-0 fs-md-1">Créer votre compte agence</h4>
-                  <form class="text-start mt-4" action="#" method="post">
+                  <form class="text-start mt-4" action="/inscrire_agence/store" method="post">
+
+                                              @csrf
+                         
+                               
                     <div class="row align-items-center g-4">
+                          <input type="hidden" name="role_id" value="roles_id[0]->id">
                       <div class="col-6">
-                         <input class="form-control" type="text" placeholder="Nom d'utilisateur" aria-label="First Name" name='nom_utilisateur'/>
+                         <input class="form-control" type="text" placeholder="Nom d'utilisateur" aria-label="First Name" name='name' required/>
                         </div>
+
                       <div class="col-6">
-                        <input class="form-control" type="email" placeholder="Adresse email" aria-label="Email Address" name='email'/>
-                      </div>
-                      <div class="col-12">
-                        <input class="form-control" type="Password" placeholder="mot de passe" aria-label="Password" name='password' />
-                      </div>
-                      <div class="col-12">
-                        <input class="form-control" type="Password" placeholder="Confirmer mot de passe" aria-label="Confirm Password" name='confirm_pzss'/>
+                        <input class="form-control" type="email" placeholder="Adresse email" aria-label="Email Address" name='email'  required/>
                       </div>
                       <div class="col-6">
-                        <input class="form-control" type="text" placeholder="Nom d'agence" aria-label="Nom d'agence" name='nom_agence'/>
+                      <label class="form-control-label text-500 lh-sm fw-bold" for="">Logo</label>
+                        <input class="form-control" type="file"  required aria-label="logo" name='avatar'/>
                       </div>
+
+                      <div class="col-6">
+                      <label class="form-control-label text-500 lh-sm fw-bold" for="">Mot de passe</label>
+                        <input class="form-control" type="Password" aria-label="Password" name='password'  required/>
+                      </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="Password" placeholder="Confirmer mot de passe" aria-label="Confirm Password" name='confirm_pass'  required/>
+                      </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Nom d'agence" aria-label="Nom d'agence" name='entite'  required/>
+                      </div>
+
                       <div class="col-6">
                         <input class="form-control" type="text" placeholder="site web" aria-label="site web" name='site'/>
                       </div>
-                      <div class="col-12">
-                        <input class="form-control" type="text" placeholder="Personnel" aria-label="Personnel" name='personne' />
+
+                      <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Personnel" aria-label="Personnel" name='personnel'  required />
                       </div>
-                      <div class="col-12">
-                      <label class="form-control-label text-500 lh-sm fw-bold" for="">Logo</label>
-                        <input class="form-control" type="file"  aria-label="logo" name='logo'/>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea  type="text" aria-label="description"  required name='description' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
+
                       
-                      <div class="col-12">
-                        <label class="form-control-label text-500 lh-sm fw-bold" for="">Description</label>
-                        <input class="form-control" type="text" aria-label="description" name='description'/>
-                      </div>
+                      
+                      
                     </div>
                     <div class="row align-items-center mt-3">
                       <div class="col-6 mt-3">
                         <div class="form-check">
-                          <a href="">retour</a>
-                          <!-- <input class="form-check-input" id="rememberMe" type="checkbox" value="" />
-                          <label class="form-check-label text-500 lh-sm fw-semi-bold" for="rememberMe">I agree with the terms &amp; condition</label> -->
+                          <a href="{{route('acceuil')}}">retour</a>
+
                         </div>
                       </div>
                       <div class="col-6 mt-2 mt-sm-3">
@@ -134,7 +150,6 @@
   <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
 
   </body>
-
 
 
 </html>

@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{asset('bootstrap-5.1.3-dist/js/bootstrap.bundle.js')}}">
     <meta name="msapplication-TileImage" content="{{asset('img/favicons/mstile-150x150.png')}}">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script src="vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
 
    
@@ -26,6 +28,7 @@
     <link href="vendors/hamburgers/hamburgers.min.css" rel="stylesheet">
     <link href="vendors/loaders.css/loaders.min.css" rel="stylesheet">
     <link href="{{asset('css/fontcss.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('css/user.min.css')}}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
@@ -45,11 +48,11 @@
                 <a class="nav-link text-white" href="{{route('acceuil')}}">Acceuil</a>
                
               </li>
-              <li class="nav-item dropdown "><a class=" dropdown-item text-white" href="{{route('agence')}}">Agence de communication</a>
+              <li class="nav-item dropdown "><a class=" dropdown-item text-white" href="{{route('agence')}}">Agences de communication</a>
                
               </li>
               
-              <li class="nav-item dropdown "><a class="dropdown-item text-white" href="{{route('entreprise')}}">Entreprise</a>
+              <li class="nav-item dropdown "><a class="dropdown-item text-white" href="{{route('entreprise')}}">Entreprises</a>
                 
               </li>
               <li class="nav-item dropdown "><a class="nav-link text-white" href="{{route('contact')}}" role="button">Contact</a></li>
@@ -57,7 +60,7 @@
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator text-white " style="border-radius: 10px;border:solid 1px;margin-left:30px" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">inscription
               </a>
                 <ul class="dropdown-menu ">
-                  <li><a class="dropdown-item" href="{{ route('inscrir_agence') }}">Agence de communication</a></li>
+                  <li><a class="dropdown-item" href="{{ route('inscrire_agence.index') }}">Agence de communication</a></li>
                   <li><a class="dropdown-item" href="{{ route('inscrire_entreprise') }}">Entreprise</a></li>
                  
                 </ul>
@@ -66,14 +69,10 @@
 
               <li class="nav-item dropdown">
                
-                <a class="nav-link dropdown-toggle dropdown-indicator text-white " style="border-radius: 10px;border:solid 1px;margin-left: 30px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> connexion
+                <a class="nav-link  text-white " style="border-radius: 10px;border:solid 1px;margin-left: 30px;" href="{{route('connect')}}" > connexion
               </a>
               
-                <ul class="dropdown-menu ">
-                  <li><a class="dropdown-item" href="{{route('connect')}}">Agence de communication</a></li>
-                  <li><a class="dropdown-item" href="{{route('connect')}}">Entreprise</a></li>
-                 
-                </ul>
+               
               </li>
               
             </ul>
@@ -86,17 +85,16 @@
     <main class="main" id="top">
       @yield('contenu')
     </main>
-    
 
     <footer class="footer bg-info text-center py-4">
       <div class="container bg-info">
         <div class="row align-items-center opacity-85 text-white">
-          <div class="col-sm-3 text-sm-start"><a href="{{route('acceuil')}}"><img src="{{asset('img/logo.png')}}"  alt="logo" style="height:50px;weight:100%"/></a></div>
+          <div class="col-sm-3 text-sm-start"><a href="{{route('acceuil')}}"><img src="{{asset('img/logo.png')}}"  alt="logo" style="height:50px;width: 50px"/></a></div>
           <div class="col-sm-6 mt-3 mt-sm-0">
             <p class="lh-lg mb-0 fw-semi-bold">&copy; Copyright 2021@segtaba.</p>
           </div>
           <div class="col text-sm-end mt-3 mt-sm-0">
-             <a class="fw-semi-bold text-white btn btn-primary" href="{{route('inscrir_agence')}}" >INSCRIVEZ-VOUS SUR SEGTABA</a></div>
+             <a class="fw-semi-bold text-white btn btn-primary" href="{{route('inscrire_agence.index')}}" >INSCRIVEZ-VOUS SUR SEGTABA</a></div>
         </div>
       </div>
     </footer>

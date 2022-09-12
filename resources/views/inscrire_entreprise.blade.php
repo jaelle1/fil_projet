@@ -57,19 +57,68 @@
               <div class="card" data-zanim-xs='{"delay" :0.1 ,"duration":1}'>
                 <div class="card-body p-md-5">
                   <h4 class="text-uppercase fs-0 fs-md-1">Créer votre compte entreprise</h4>
-                  <form class="text-start mt-4">
+                  <form class="text-start mt-4" action="inscrire_entreprise/store" method="POST"
+                  enctype="multipart/form-data"
+                  >
+
+                      @csrf
                     <div class="row align-items-center g-4">
-                      <div class="col-6"> <input class="form-control" type="text" placeholder="First name" aria-label="First Name" /></div>
-                      <div class="col-6"><input class="form-control" type="text" placeholder="Last name" aria-label="Last Name" /></div>
-                      <div class="col-12"><input class="form-control" type="email" placeholder="Email Address" aria-label="Email Address" /></div>
-                      <div class="col-12"><input class="form-control" type="Password" placeholder="Password" aria-label="Password" /></div>
-                      <div class="col-12"><input class="form-control" type="Password" placeholder="Confirm Password" aria-label="Confirm Password" /></div>
+                    <input type="hidden" name="role_id" value="{{$roles_id[0]->id}}" >
+                      <div class="col-6">
+                         <input class="form-control" type="text" placeholder="Nom d'utilisateur" aria-label="First Name" name='name'/>
+       
+                        </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="email" placeholder="Adresse email" aria-label="Email Address" name='email'/>
+      
+                      </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="Password" placeholder="mot de passe" aria-label="Password" name='password' />
+                      </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="Password" placeholder="Confirmer mot de passe" aria-label="Confirm Password" name='confirm_pass'/>
+                      </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Nom d'entreprise" aria-label="Nom d'enreprise" name='entite'/>
+                      </div>
+
+                      <div class="col-6">
+                        <input class="form-control" type="text" placeholder="site web" aria-label="site web" name='site'/>
+                      </div>
+
+                      <div class="col-6">
+                      <label class="form-control-label text-500 lh-sm fw-bold" for="">personnel</label>
+                        <input class="form-control" type="text" aria-label="Personnel" name='personnel' />
+                      </div>
+
+                      <div class="col-6">
+                      <label class="form-control-label text-500 lh-sm fw-bold" for="">Logo</label>
+                        <input class="form-control" type="file"  aria-label="logo" name='avatar'/>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea  type="text" aria-label="description" name='description' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                      
+                      
+                      
                     </div>
                     <div class="row align-items-center mt-3">
                       <div class="col-6 mt-3">
-                        <div class="form-check"><input class="form-check-input" id="rememberMe" type="checkbox" value="" /><label class="form-check-label text-500 lh-sm fw-semi-bold" for="rememberMe">I agree with the terms &amp; conditions</label></div>
+                        <div class="form-check">
+                          <a href="{{route('acceuil')}}">retour</a>
+
+                        </div>
                       </div>
-                      <div class="col-6 mt-2 mt-sm-3"><button class="btn btn-primary w-100" type="submit">Create Account</button></div>
+                      <div class="col-6 mt-2 mt-sm-3">
+                        <button class="btn btn-primary w-100" type="submit" name='enregister'>Enregistrer</button>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -80,10 +129,6 @@
       </section>
 
     </main>
-
-    
-
-
 
     
     <script src="{{asset('vendors/popper/popper.min.js')}}"></script>
