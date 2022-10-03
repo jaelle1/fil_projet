@@ -59,9 +59,8 @@ class InscrireagenceController extends Controller
 
         User::create($input);
         
-        $roles_id = Role::where("name", "=", "agence")->get()->first()->id;
         
-        return view('acceuil', compact("roles_id"))->with('success', 'votre inscription est reussie');
+        return back();
     }
 
     /**

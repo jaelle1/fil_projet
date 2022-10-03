@@ -1,22 +1,6 @@
 @extends('layouts.app')
 @section('contenu')
-<section>
-  <div class="bg-holder overlay" style="background-image:url({{('img/background-2.jpg')}});background-position:center bottom;"></div>
-  <!--/.bg-holder-->
-  <div class="container">
-    <div class="row pt-6" data-inertia='{"weight":1.5}'>
-      <div class="col-md-8 text-white" data-zanim-timeline="{}" data-zanim-trigger="scroll">
 
-      </div>
-    </div>
-  </div><!-- end of .container-->
-</section><!-- <section> close ============================-->
-<!-- ============================================-->
-
-
-<!-- ===============================================-->
-<!--    Main Content-->
-<!-- ===============================================-->
 <main class="main" id="top">
   <div class="preloader" id="preloader">
     <div class="loader">
@@ -37,7 +21,8 @@
       <div class="card">
         <div class="card-body h-100 p-5">
           <h5 class="mb-3">Contacter nous directement</h5>
-          <form>
+          <form  action="store" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="mb-4">
               <input class="form-control bg-white" type="text" placeholder="Votre nom" required="required" name="nom" />
             </div>

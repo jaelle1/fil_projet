@@ -41,4 +41,6 @@ Route::get('/inscrire_agence',[InscrireagenceController::class, 'create'])->name
 Route::post('/inscrire_agence/store',[InscrireagenceController::class, 'store_agence']); 
 Route::post('/inscrire_entreprise/store', [InsentrepriseController::class,'store_entreprise']);
 Route::get('/voirplus/{id?}',[InscrireagenceController::class, 'show'])->name('show');
+Route::post('store',[ContactController::class, 'store'])->name('store');
+
 

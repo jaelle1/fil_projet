@@ -45,18 +45,20 @@
       </div>
     </div>
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
+    
     <section class="text-center py-0">
       <div class="bg-holder overlay overlay-1" style="background-image:url({{asset('img/background-1.jpg')}});"></div>
-      <!--/.bg-holder-->
+      
       <div class="container">
         <div class="row min-vh-100 align-items-center">
           <div class="col-md-9 col-lg-6 mx-auto" data-zanim-timeline="{}" data-zanim-trigger="scroll">
 
-            <!-- <div class="mb-5" data-zanim-xs='{"delay":0,"duration":1}'><a href="{{route('acceuil')}}}"><img src="{{asset('img/logo.png')}}" alt="logo" /></a></div> -->
+            <div class="mb-5" data-zanim-xs='{"delay":0,"duration":1}'>
+              
+            </div>
             <div class="card" data-zanim-xs='{"delay" :0.1 ,"duration":1}'>
               <div class="card-body p-md-5">
+              <a class="navbar-brand" href="{{route('acceuil')}}"><img src="{{asset('img/logo.png')}}" alt="logo" style="height:60px;width: 60px" /></a>
                 <h4 class="text-uppercase fs-0 fs-md-1">Créer votre compte entreprise</h4>
                 <form class="text-start mt-4" action="inscrire_entreprise/store" method="POST" enctype="multipart/form-data">
 
@@ -98,7 +100,7 @@
                       <input class="form-control" type="text" aria-label="Personnel" name='personnel' />
                     </div>
 
-                    
+
 
                     <div class="mb-3">
                       <label for="exampleFormControlTextarea1" class="form-label">Description</label>

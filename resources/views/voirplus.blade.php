@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('contenu')
-<div class="col-sm-6 col-lg-4    ">
-                <div class="card h-100"><img class="card-img-top" src="{{asset('storage/.$agence->avatar')}}" alt="" />
+<br>
+<br>
+<br>
+<br>
+<div class="col-sm-6 col-lg-4 text-center   ">
+                <div class="card ">
+                  <div class="center">
+                  <img class="card-img-center" style='height:100px;width:100px;' src="{{asset('storage/' .str_replace('public/', '',$agence->logo))}}" alt="" />
+                  </div>
                   <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                     <div class="overflow-hidden">
                     <h3 class="py-3 mb-0" data-zanim-xs='{"delay":0.1}'><strong>{{$agence->entite}}</strong></h3>

@@ -37,9 +37,10 @@ class InsentrepriseController extends Controller
         
 
         User::create($input);
-        
+    return back();
         
     }
+
     public function show(Request $request)
     {
        $entreprise =  User::find($request->id);

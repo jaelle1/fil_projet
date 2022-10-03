@@ -64,6 +64,7 @@
             <!-- <div class="mb-5" data-zanim-xs='{"delay":0,"duration":1}'><a href="index-2.html"><img src="{{asset('img/logo-light.png')}}" alt="logo" /></a></div> -->
             <div class="card" data-zanim-xs='{"delay":0.1,"duration":1}'>
               <div class="card-body p-md-5">
+              <a class="navbar-brand" href="{{route('acceuil')}}"><img src="{{asset('img/logo.png')}}" alt="logo" style="height:60px;width:60px" /></a>
                 <h4 class="text-uppercase fs-0 fs-md-1">Créer votre compte agence</h4>
                 <form class="text-start mt-4" action="/inscrire_agence/store" method="post" enctype="multipart/form-data">
 
